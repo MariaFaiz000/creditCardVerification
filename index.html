@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Form Validation</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <div id="instructions">
+  <h1>Verification page</h1>
+  <h2>Please enter your details and press submit.</h2>
+  </div>
+  <form action="mailto:challenge@dn-uk.com" method="post" enctype="text/plain">
+    <div id="cardWrapper" class="center">
+      <fieldset>
+        <div>
+          <label>Name:</label>
+          <input type="text" name="name" id="name" placeholder="Enter Your Name" onblur="validateName(this.form); highlightInvalidInputs(this.form);" required>
+        </div>
+        <div>
+          <label>Email:</label>
+          <input type="email" name="email" id="email" placeholder="Enter Your Email" required>
+        </div>
+        <div>
+          <label>Card:</label>
+          <input type="number" name="card" id="card" placeholder="Enter a Valid Credit Card Number" onblur="validateCreditCardNumber(this.form); highlightInvalidInputs(this.form);" required>
+        </div>
+        <button type="submit" id="submitButton" onclick="closeCardDetails()">Submit</button>
+
+      </fieldset>
+    </div>
+  </form>
+  <div id="thankYouMessage" style="display: none;">
+  <h1>Thank you. your request is being processed. A confirmation email will be sent shortly.</h1>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
